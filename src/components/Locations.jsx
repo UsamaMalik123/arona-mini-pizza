@@ -19,7 +19,7 @@ export default function Locations() {
               <span className="area">Neukölln</span>
               <h3>Hermannstraße 168</h3>
               <p>12051 Berlin-Neukölln</p>
-              <span className="open" id="openNK"><i /><span>Täglich 11:00 – 23:00</span></span>
+              <span className="status-badge" id="openNK"><i /><span>Täglich 11:00 – 23:00</span></span>
               <dl className="hrs"><dt>Laden</dt><dd>11:00 – 23:00</dd><dt>Lieferung</dt><dd>11:00 – 22:00</dd></dl>
               <div className="contact"><small style={{color: 'var(--muted)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '.12em', fontSize: '.72rem'}}>Telefon</small>
                 <div className="num"><b id="telNK">030 97004392</b><button className="copy" data-copy="030 97004392" data-target="telNK">Kopieren</button></div></div>
