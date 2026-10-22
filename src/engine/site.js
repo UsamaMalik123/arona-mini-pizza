@@ -223,6 +223,8 @@ document.querySelectorAll(".size").forEach(b=>b.addEventListener("click",()=>{si
 const burger=document.getElementById("burger"),links=document.getElementById("links");
 burger.addEventListener("click",()=>{const o=links.classList.toggle("open");burger.setAttribute("aria-expanded",o)});
 links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{links.classList.remove("open");burger.setAttribute("aria-expanded","false")}));
+document.addEventListener("click",e=>{if(links.classList.contains("open")&&!links.contains(e.target)&&!burger.contains(e.target)){links.classList.remove("open");burger.setAttribute("aria-expanded","false")}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&links.classList.contains("open")){links.classList.remove("open");burger.setAttribute("aria-expanded","false");burger.focus()}});
 document.querySelectorAll(".copy[data-copy]").forEach(btn=>btn.addEventListener("click",()=>{const lab=btn.textContent,sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById(btn.dataset.target));const g=getSelection();g.removeAllRanges();g.addRange(r);btn.textContent="Markiert"};
   try{navigator.clipboard.writeText(btn.dataset.copy).then(()=>{btn.textContent="Kopiert"},sel)}catch(e){sel()}setTimeout(()=>btn.textContent=lab,1800)}));
 (function(){const el=document.getElementById("openNK");if(!el)return;const now=new Date(new Date().toLocaleString("en-US",{timeZone:"Europe/Berlin"})),h=now.getHours()+now.getMinutes()/60,open=h>=11&&h<23;
